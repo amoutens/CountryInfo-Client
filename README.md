@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides a **React frontend** powered by **Vite** with TypeScript support, optimized for fast development and production builds. It includes **React Router**, **Material UI**, and **Chart.js** for UI components and data visualization.  
 
-Currently, two official plugins are available:
+## Frontend Setup  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Tech Stack  
 
-## Expanding the ESLint configuration
+- **React.js** – Frontend framework  
+- **TypeScript** – Statically typed JavaScript  
+- **Vite** – Fast development server and build tool  
+- **React Router** – Client-side navigation  
+- **MUI (Material UI)** – UI components library  
+- **Chart.js + react-chartjs-2** – Data visualization  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Scripts  
 
-- Configure the top-level `parserOptions` property like this:
+The following scripts are available in `package.json`:  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
+  }
+}
+```  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Pages & Features  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### **Country List Page**  
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Fetches and displays a list of countries from the backend API.  
+- Clicking a country navigates to the **Country Details Page**.  
+
+### **Country Details Page**  
+
+Displays detailed information about a selected country:  
+
+- **Country Name** – Displayed at the top.  
+- **Country Flag** – Fetched from the backend and displayed near the name.  
+- **Border Countries Widget**:  
+  - Lists neighboring countries.  
+  - Clicking a border country loads its details.  
+- **Population Chart**:  
+  - Displays historical population data.  
+  - X-axis: Years, Y-axis: Population.  
+
+## Running the Project  
+
+### **Development Mode**  
+
+```sh
+npm run dev
+```  
