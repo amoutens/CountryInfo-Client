@@ -1,0 +1,51 @@
+.country-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 90vh;
+  width: 100%;
+}
+.country-details {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.country-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.flag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag-container img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.population-chart {
+  grid-column: 1 / -1;
+  margin-top: 30px;
+}
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
